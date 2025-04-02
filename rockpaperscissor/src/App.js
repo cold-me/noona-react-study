@@ -27,7 +27,7 @@ function App() {
         tie: 0,
         total: 0,
     });
-    const historyArray = ['You Win:', 'Computer Win:', 'Tie:', 'Total:'];
+    const historyArray = ['🏆 You Win:', '💻 Computer Win:', '🤝 Tie:', '📊 Total:'];
     const play = (userChoice) => {
         setUserSelect(choice[userChoice]);
         let computerChoice = randomChoice();
@@ -65,26 +65,26 @@ function App() {
     };
 
     return (
-        <div className='main-vertical'>
-            <div>
-                <div className='main-horizontal'>
-                    <Box title='U' item={userSelect} result={userResult} />
-                    <Box title='computer' item={computerSelect} result={computerResult} />
-                </div>
-            </div>
+        <div className='main-vertical img-bg'>
             <div className='history-box'>
-                <div className='main-horizontal'>
-                    <button onClick={() => play('scissors')}>가위</button>
-                    <button onClick={() => play('rock')}>바위</button>
-                    <button onClick={() => play('paper')}>보</button>
-                </div>
-                <h1>
+                <h2>
                     {historyArray.map((item, i) => (
                         <li key={i}>
                             {item} {Object.values(history)[i]}
                         </li>
                     ))}
-                </h1>
+                </h2>
+                <div className='main-horizontal'>
+                    <button onClick={() => play('scissors')}>가위</button>
+                    <button onClick={() => play('rock')}>바위</button>
+                    <button onClick={() => play('paper')}>보</button>
+                </div>
+            </div>
+            <div>
+                <div className='main-horizontal'>
+                    <Box title='you' item={userSelect} result={userResult} />
+                    <Box title='computer' item={computerSelect} result={computerResult} />
+                </div>
             </div>
         </div>
     );

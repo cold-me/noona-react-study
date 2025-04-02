@@ -1,28 +1,36 @@
 .box {
-    width: 500px;
-    height: 800px;
+    width: 50vw;
+    max-width: 400px;
+    height: 60vh;
+    max-height: 600px;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
 }
 .black-border {
-    border: 5cap solid black;
+    border: 1vw solid black;
 }
 
 .red-border {
-    border: 5cap solid red;
+    border: 1vw solid #f28972;
 }
 .green-border {
-    border: 5cap solid green;
+    border: 1vw solid #bfb52c;
 }
 .blue-border {
-    border: 5cap solid blue;
+    border: 1vw solid #8dd5f2;
 }
 
 .item-img {
-    width: 400px;
+    width: 40vw;
+    height: 25vw;
+    max-width: 300px;
+    max-height: 200px;
 }
 
 .result-img {
-    margin: 40px;
-    width: 200px;
+    width: 20vw;
+    max-width: 100px;
 }
 .main-horizontal {
     display: flex;
@@ -30,14 +38,16 @@
     text-align: center;
 }
 .history-box {
-    border: 4cap solid gold;
-    width: 1130px;
+    box-shadow: inset 5vw 5vw 10vw rgba(0.9, 0.1, 1, 0.1);
+    width: 100vw;
+    max-width: 850px;
+    background-color: white;
 }
 .main-vertical {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     text-align: center;
-    flex-direction: column;
     align-items: center;
 }
 .history-box li {
@@ -46,4 +56,9 @@
 
 button:hover {
     background-color: gold;
+}
+
+.img-bg {
+    background-image: url('https://img.freepik.com/premium-vector/empty-wrestling-sport-arena-boxing-ring-dramatic-sports-vector-background-sport-competition-ring-wrestling-boxing-arena-illustration_53562-6181.jpg?w=360');
+    background-size: cover;
 }
