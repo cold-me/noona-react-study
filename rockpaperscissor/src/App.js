@@ -75,9 +75,19 @@ function App() {
                     ))}
                 </h2>
                 <div className='main-horizontal'>
-                    <button onClick={() => play('scissors')}>가위</button>
-                    <button onClick={() => play('rock')}>바위</button>
-                    <button onClick={() => play('paper')}>보</button>
+                    <img
+                        className='choice-img'
+                        src={choice.scissors.img}
+                        onClick={() => play('scissors')}
+                        alt='choice-scissors'
+                    />
+                    <img className='choice-img' src={choice.rock.img} onClick={() => play('rock')} alt='choice-rock' />
+                    <img
+                        className='choice-img'
+                        src={choice.paper.img}
+                        onClick={() => play('paper')}
+                        alt='choice-paper'
+                    />
                 </div>
             </div>
             <div>
