@@ -1,0 +1,25 @@
+body {
+    background: url('https://t3.ftcdn.net/jpg/11/83/89/06/360_F_1183890656_5eHuHXhxSmovJ2bd7tJKBqK0Yp2LXoaY.jpg');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.weather-box {
+    border: 0.5rem solid white;
+    padding: 1rem;
+    border-radius: 10%;
+    background-color: white;
+}
+
+.button-hover:hover {
+    background-color: pink;
+}
