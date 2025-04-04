@@ -13,6 +13,7 @@ import WeatherButton from './components/WeatherButton';
  *  6. 데이터를 들고오는 동안 로딩 스피너가 돈다.
  */
 function App() {
+    const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
     const [weather, setWeather] = useState(null);
     const cities = ['seoul', 'new york', 'paris', 'tokyo'];
     const [city, setCity] = useState(null);
@@ -26,7 +27,7 @@ function App() {
         });
     };
     const getWeatherByCurrentLocation = async (lat, lon) => {
-        const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=94073478157af34b5a2a9d70fb237a81&units=metric`;
+        const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
         setLoading(true);
         const response = await fetch(url);
         const data = await response.json();
@@ -34,7 +35,7 @@ function App() {
         setLoading(false);
     };
     const getWeatherByCity = async () => {
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=94073478157af34b5a2a9d70fb237a81&units=metric`;
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
         const response = await fetch(url);
         const data = await response.json();
         setWeather(data);
