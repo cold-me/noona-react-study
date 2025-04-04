@@ -1,8 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Nanum+Myeongjo&display=swap');
 body {
-    background: url('https://t3.ftcdn.net/jpg/11/83/89/06/360_F_1183890656_5eHuHXhxSmovJ2bd7tJKBqK0Yp2LXoaY.jpg');
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
+}
+.italic-text {
+    font-style: italic;
+}
+/* 배경 영상 스타일 */
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
     height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
+    -o-object-fit: cover;
+    object-fit: cover;
+    z-index: -1;
 }
 
 .container {
@@ -14,12 +27,33 @@ body {
 }
 
 .weather-box {
-    border: 0.5rem solid white;
-    padding: 1rem;
+    width: 28%;
+    max-width: 375px;
+    min-width: 375px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 6rem;
     border-radius: 10%;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.3);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
 }
-
 .button-hover:hover {
     background-color: pink;
+}
+
+.margin-box {
+    margin: 1rem;
+}
+
+.vertical-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.horizontal-box {
+    display: flex;
+}
+.mood-img {
+    width: 30px;
+    height: 30px;
 }

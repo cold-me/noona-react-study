@@ -5,19 +5,19 @@ import './App.css';
 import WeatherBox from './components/WeatherBox';
 import WeatherButton from './components/WeatherButton';
 
-/** 1.  앱이 실행되자마자 현재 위치기반의 날씨가 보인다.
- *  2. 날씨 정보에는 도시, 섭씨, 화씨, 날씨상태
- *  3. 5개의 버튼이 존재 (1개는 현재위치, 4개는 다른 도시)
- *  4. 도시버튼을 클릭할때마다 도시별 날씨가 나온다.
- *  5. 현재 위치 기반 날씨버튼을 클릭하면 다시 현재위치 기반으로 돌아온다
- *  6. 데이터를 들고오는 동안 로딩 스피너가 돈다.
- */
 function App() {
     const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
     const [weather, setWeather] = useState(null);
     const cities = ['seoul', 'new york', 'paris', 'tokyo'];
     const [city, setCity] = useState(null);
     const [loading, setLoading] = useState(false);
+    const citiesBackground = {
+        current: 'https://videos.pexels.com/video-files/31197958/13326009_2560_1440_25fps.mp4',
+        seoul: 'https://videos.pexels.com/video-files/1860079/1860079-uhd_2560_1440_25fps.mp4',
+        'new york': 'https://videos.pexels.com/video-files/3202634/3202634-hd_1920_1080_30fps.mp4',
+        paris: 'https://videos.pexels.com/video-files/4272751/4272751-hd_1920_1080_30fps.mp4',
+        tokyo: 'https://videos.pexels.com/video-files/5845559/5845559-uhd_2732_1440_24fps.mp4',
+    };
 
     const getCurrentLocation = () => {
         navigator.geolocation.getCurrentPosition((position) => {
@@ -31,6 +31,8 @@ function App() {
         setLoading(true);
         const response = await fetch(url);
         const data = await response.json();
+        console.log('data', data);
+        setCity('current');
         setWeather(data);
         setLoading(false);
     };
@@ -47,6 +49,9 @@ function App() {
 
     return (
         <>
+            <video key={city} autoPlay loop muted playsInline className='background-video'>
+                <source src={(city && citiesBackground[city]) || citiesBackground['current']} type='video/mp4' />
+            </video>
             {loading ? (
                 <div className='container'>
                     <ClipLoader color='#f88c6b' loading={loading} size={150} />
@@ -62,10 +67,3 @@ function App() {
 }
 
 export default App;
-// function success(position) {
-//     x.innerHTML = 'Latitude: ' + position.coords.latitude + '<br>Longitude: ' + position.coords.longitude;
-// }
-
-// function error() {
-//     alert('Sorry, no position available.');
-// }

@@ -3,15 +3,17 @@ import { Button } from 'react-bootstrap';
 
 const WeatherButton = ({ cities, setCity }) => {
     return (
-        <div>
-            <Button variant='primary button-hover' onClick={() => setCity('current')}>
+        <div className='vertical-box'>
+            <Button variant='light button-hover' onClick={() => setCity('current')}>
                 current Location
             </Button>
-            {cities.map((item) => (
-                <Button className='button-hover' variant='primary' onClick={() => setCity(item)}>
-                    {item}
-                </Button>
-            ))}
+            <div className='horizontal-box'>
+                {cities.map((item) => (
+                    <Button key={item} className='button-hover' variant='primary' onClick={() => setCity(item)}>
+                        {item}
+                    </Button>
+                ))}
+            </div>
         </div>
     );
 };
