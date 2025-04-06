@@ -9,24 +9,24 @@ const WeatherBox = ({ weather }) => {
         tokyo: 'red',
     };
     const celcius = weather?.main.temp;
-    const fahrenheit = (celcius * 1.8 + 32).toFixed(3);
+    const fahrenheit = celcius && (celcius * 1.8 + 32).toFixed(3);
+    console.log(celcius, fahrenheit);
     return (
         <div className='weather-box'>
             <h1 style={{ color: titleColor[weather?.name.toLowerCase()] || titleColor['current'] }}>{weather?.name}</h1>
-            <h4 className='italic-text'>Temperature</h4>
+            <h2 className='italic-text'>Temperature</h2>
             <div className='margin-box'>
-                <div>🌡️ {celcius}°C</div>
-                <div>🌡️ {fahrenheit}°F</div>
+                <h4>🌡️ {celcius}°C</h4>
+                <h4>🌡️ {fahrenheit}°F</h4>
             </div>
-            <h4 className='italic-text'>Today's mood</h4>
+            <h2 className='italic-text'>Today's mood</h2>
             <div className='vertical-box'>
-                {/* <img className='mood-img' src={moods[weather?.weather[0].description]} alt='mood-img' /> */}
                 <img
                     className='mood-img'
                     src={`https://openweathermap.org/img/wn/${[weather?.weather[0].icon]}@2x.png`}
                     alt='mood-img'
                 />
-                {weather?.weather[0].description}
+                <h4>{weather?.weather[0].description}</h4>
             </div>
         </div>
     );

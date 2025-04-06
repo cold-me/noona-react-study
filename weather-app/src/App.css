@@ -2,6 +2,7 @@
 body {
     font-family: 'Merriweather', serif;
     font-weight: 400;
+    font-size: 1rem;
 }
 .italic-text {
     font-style: italic;
@@ -27,11 +28,15 @@ body {
 }
 
 .weather-box {
-    width: 28%;
-    max-width: 375px;
-    min-width: 375px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 37%;
+    height: auto;
+    max-width: 80%;
+    min-width: 34%;
     border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 6rem;
+    padding: clamp(0em, 8vw, 6rem);
     border-radius: 10%;
     background-color: rgba(255, 255, 255, 0.3);
     -webkit-backdrop-filter: blur(10px);
@@ -42,7 +47,10 @@ body {
 }
 
 .margin-box {
-    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    margin: clamp(0rem, 0rem, 1rem);
+    align-items: center;
 }
 
 .vertical-box {
@@ -56,4 +64,46 @@ body {
 .mood-img {
     width: 30px;
     height: 30px;
+}
+
+h1 {
+    font-size: clamp(2rem, 3vw, 3.8rem);
+}
+h2 {
+    font-size: clamp(1rem, 2vw, 2.4rem);
+}
+h4 {
+    font-size: clamp(0.8rem, 1.4vw, 1.5rem);
+}
+
+@media (max-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .weather-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 75%;
+        height: auto;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 10%;
+        background-color: rgba(255, 255, 255, 0.3);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+    h1 {
+        font-size: clamp(2rem, 3vw, 3.8rem);
+    }
+    h2 {
+        font-size: clamp(1rem, 2vw, 2.3rem);
+    }
+    h4 {
+        font-size: clamp(0.8rem, 1.4vw, 1.5rem);
+    }
 }
