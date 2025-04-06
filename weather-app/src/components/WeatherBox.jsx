@@ -21,11 +21,15 @@ const WeatherBox = ({ weather }) => {
             </div>
             <h2 className='italic-text'>Today's mood</h2>
             <div className='vertical-box'>
-                <img
-                    className='mood-img'
-                    src={`https://openweathermap.org/img/wn/${[weather?.weather[0].icon]}@2x.png`}
-                    alt='mood-img'
-                />
+                {weather && (
+                    <div>
+                        <img
+                            className='mood-img'
+                            src={`https://openweathermap.org/img/wn/${[weather?.weather[0].icon]}@2x.png`}
+                            alt='mood-img'
+                        />
+                    </div>
+                )}
                 <h4>{weather?.weather[0].description}</h4>
             </div>
         </div>
