@@ -1,0 +1,44 @@
+.login-button {
+    display: flex;
+    justify-content: flex-end;
+    margin: 30px;
+}
+.nav-section {
+    display: flex;
+    justify-content: center;
+}
+.menu-list {
+    display: flex;
+    list-style-type: none;
+}
+.menu-list li {
+    padding: 20px;
+    font-size: large;
+}
+
+.menu-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search-area {
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+    border-radius: 5%;
+    border-bottom: 1px dotted gray;
+}
+.search-area:hover {
+    border-bottom: 2px dotted rgb(219, 216, 57);
+}
+
+.search-input {
+    border: none;
+    margin: 10px;
+}
+
+.product-image {
+    width: 100%;
+    aspect-ratio: 4 / 6;
+    border-radius: 8px;
+}
