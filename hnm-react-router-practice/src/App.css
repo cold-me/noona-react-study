@@ -1,7 +1,11 @@
-.login-button {
+.login-section {
     display: flex;
     justify-content: flex-end;
-    margin: 30px;
+    align-items: center;
+    margin: 20px;
+}
+.padding-10px {
+    margin: 10px;
 }
 .nav-section {
     display: flex;
@@ -14,6 +18,9 @@
 .menu-list li {
     padding: 20px;
     font-size: large;
+}
+.menu-list li:hover {
+    color: greenyellow;
 }
 
 .menu-area {
@@ -29,12 +36,16 @@
     border-bottom: 1px dotted gray;
 }
 .search-area:hover {
-    border-bottom: 2px dotted rgb(219, 216, 57);
+    border-bottom: 1px dotted greenyellow;
+    color: greenyellow;
 }
 
 .search-input {
     border: none;
     margin: 10px;
+}
+.search-input:focus {
+    color: black;
 }
 
 .product-image {

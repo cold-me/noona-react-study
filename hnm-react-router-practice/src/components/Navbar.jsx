@@ -7,9 +7,9 @@ const Navbar = () => {
     return (
         <div>
             <div>
-                <div className='login-button'>
+                <div className='login-section'>
                     <FontAwesomeIcon icon={faUser} />
-                    <div>Login</div>
+                    <div className='padding-10px'>Login</div>
                 </div>
             </div>
             <div className='nav-section'>

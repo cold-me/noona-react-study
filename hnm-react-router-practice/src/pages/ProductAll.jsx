@@ -7,7 +7,7 @@ import ProductCard from '../components/ProductCard';
 const ProductAll = () => {
     const [productList, setProductList] = useState([]);
     const getProducts = async () => {
-        const url = 'http://localhost:4000/products';
+        const url = 'https://json-server-vercel-xi-seven.vercel.app/products';
         const res = await fetch(url);
         const data = await res.json();
         setProductList(data);
