@@ -11,7 +11,7 @@ const Login = ({ setAuthenticate }) => {
         console.log('1.로그인 버튼이 눌렸다');
     };
     return (
-        <Container>
+        <Container className='detail-container'>
             <Form onSubmit={(event) => loginUser(event)}>
                 <Form.Group className='mb-3' controlId='formBasicEmail'>
                     <Form.Label>Email address</Form.Label>
@@ -26,9 +26,11 @@ const Login = ({ setAuthenticate }) => {
                 <Form.Group className='mb-3' controlId='formBasicCheckbox'>
                     <Form.Check type='checkbox' label='Check me out' />
                 </Form.Group>
-                <Button variant='danger' type='submit'>
-                    로그인
-                </Button>
+                <div className='login-btn'>
+                    <Button variant='danger' type='submit'>
+                        로그인
+                    </Button>
+                </div>
             </Form>
         </Container>
     );

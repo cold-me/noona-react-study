@@ -71,17 +71,29 @@
 .new-text {
     display: inline-block;
     color: white;
+    width: 20%;
+    text-align: center;
     background-color: black;
     font-size: x-small;
     font-style: italic;
     border-radius: 10px;
-    padding: 2px;
-    -webkit-animation: glow 2s ease-in-out infinite;
-    animation: glow 2s ease-in-out infinite;
+    -webkit-animation: glow 3s ease-in-out infinite;
+    animation: glow 3s ease-in-out infinite;
 }
 .add-shopping-box-btn {
     margin-top: 3rem;
     width: 80%;
+}
+.product-text {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    margin-bottom: 3rem;
+}
+.product-price {
+    font-size: small;
 }
 
 @-webkit-keyframes glow {
@@ -89,7 +101,7 @@
         box-shadow: 0 0 2px white;
     }
     50% {
-        box-shadow: 0 0 4px skyblue;
+        box-shadow: 0 0 4px #4dccff;
     }
     100% {
         box-shadow: 0 0 2px white;
@@ -101,7 +113,7 @@
         box-shadow: 0 0 2px white;
     }
     50% {
-        box-shadow: 0 0 4px skyblue;
+        box-shadow: 0 0 4px #4dccff;
     }
     100% {
         box-shadow: 0 0 2px white;
@@ -125,6 +137,15 @@
     padding: 0px;
     margin: 0px;
 }
+.login-btn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.login-btn button {
+    width: 100%;
+}
+
 @media (max-width: 768px) {
     .menu-area {
         display: none;
@@ -174,5 +195,14 @@
     }
     .sidebar-close-item:hover {
         color: white;
+    }
+    .product-text {
+        margin: 1rem;
+        margin-bottom: 6rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.3rem;
     }
 }
