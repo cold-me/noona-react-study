@@ -7,7 +7,7 @@ import { useSearchParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 const ProductAll = () => {
     const [productList, setProductList] = useState([]);
-    const [query, setQuery] = useSearchParams();
+    const [query, _] = useSearchParams();
     const getProducts = async () => {
         const searchQuery = query.get('q') || '';
         const url = `https://json-server-vercel-xi-seven.vercel.app/products?q=${searchQuery}`;

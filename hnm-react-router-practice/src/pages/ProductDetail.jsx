@@ -16,22 +16,24 @@ const ProductDetail = () => {
         getProductDetail();
     }, []);
     return (
-        <Container>
-            <Row>
-                <Col className='detail-img'>
-                    <img src={product?.img} />
-                </Col>
-                <Col className='detail-container'>
-                    <div className='choice-text'>{product?.choice ? 'Conscious choice' : ''}</div>
-                    <div>{product?.title}</div>
-                    <div>₩ {product?.price}</div>
-                    <DropDownList />
-                    <Button variant='dark' className='add-shopping-box-btn'>
-                        장바구니 추가
-                    </Button>
-                </Col>
-            </Row>
-        </Container>
+        <div>
+            <Container>
+                <Row className='vertical'>
+                    <Col>
+                        <img className='detail-img' src={product?.img} />
+                    </Col>
+                    <Col className='detail-container'>
+                        <div className='choice-text'>{product?.choice ? 'Conscious choice' : ''}</div>
+                        <div>{product?.title}</div>
+                        <div>₩ {product?.price}</div>
+                        <DropDownList />
+                        <Button variant='dark' className='add-shopping-box-btn'>
+                            장바구니 추가
+                        </Button>
+                    </Col>
+                </Row>
+            </Container>
+        </div>
     );
 };
 
